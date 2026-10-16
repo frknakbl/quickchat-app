@@ -58,3 +58,32 @@ shasum -a 256 -c QuickChat-2.4.8-universal.zip.sha256
 ```
 
 ZIP’i açıp QuickChat’i Uygulamalar klasörüne taşıyın.
+
+## Kaynak koddan derleme
+
+macOS, Xcode Command Line Tools ve `librsvg` gerekir:
+
+```sh
+brew install librsvg
+bash build.sh
+```
+
+Uygulama `outputs/QuickChat.app` içinde oluşur. Derleme Intel ve Apple Silicon
+yürütülebilirlerini birleştirir. Yerel derleme varsayılan olarak ad-hoc imzalanır.
+
+Davranış ve metin kısayolu testleri, ekran açıkken bir macOS oturumunda çalıştırılır:
+
+```sh
+bash tests/check-behavior.sh
+bash tests/check-shortcuts.sh
+```
+
+Yayın ZIP’i, SHA-256 dosyası ve Homebrew tanımını üretmek için:
+
+```sh
+bash scripts/package-release.sh frknakbl/quickchat-app
+```
+
+## Lisans
+
+[MIT](LICENSE).

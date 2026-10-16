@@ -1,0 +1,15 @@
+.build/
+distribution/publish/
+backups/
+outputs/
+*.app/
+*.log
+*.tmp
+*.temp
+*.jsonl
+*.png
+screenshots/
+sessions/
+cookies/
+cookies*/
+.DS_Store
