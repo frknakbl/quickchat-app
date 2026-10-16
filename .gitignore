@@ -1,4 +1,5 @@
 .build/
+QA.md
 distribution/publish/
 backups/
 outputs/
