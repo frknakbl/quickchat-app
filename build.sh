@@ -23,6 +23,7 @@ ARCHITECTURES=" $(xcrun lipo -archs "$APP_DIR/Contents/MacOS/QuickChat") "
 [[ "$ARCHITECTURES" == *" arm64 "* && "$ARCHITECTURES" == *" x86_64 "* ]]
 
 cp "$SCRIPT_DIR/Info.plist" "$APP_DIR/Contents/Info.plist"
+cp "$SCRIPT_DIR/LICENSE" "$APP_DIR/Contents/Resources/LICENSE"
 
 rsvg-convert -w 1024 -h 1024 "$SCRIPT_DIR/icon.svg" -o "$BUILD_DIR/icon-1024.png"
 ICONSET_DIR="$BUILD_DIR/QuickChat.iconset"

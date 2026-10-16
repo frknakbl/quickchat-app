@@ -8,6 +8,7 @@ APP="$ROOT/outputs/QuickChat.app"
 VERSION="$(plutil -extract CFBundleShortVersionString raw "$APP/Contents/Info.plist")"
 MINIMUM_OS="$(plutil -extract LSMinimumSystemVersion raw "$APP/Contents/Info.plist")"
 [[ "$MINIMUM_OS" == "13.0" ]] || { echo "Beklenmeyen macOS alt sınırı: $MINIMUM_OS" >&2; exit 1; }
+cmp "$ROOT/LICENSE" "$APP/Contents/Resources/LICENSE"
 codesign --verify --deep --strict "$APP"
 ARCHITECTURES=" $(xcrun lipo -archs "$APP/Contents/MacOS/QuickChat") "
 [[ "$ARCHITECTURES" == *" arm64 "* && "$ARCHITECTURES" == *" x86_64 "* ]]
