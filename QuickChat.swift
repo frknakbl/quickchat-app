@@ -175,6 +175,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, WKNavigationDelegate, 
         )
 
         webView = ChatWebView(frame: .zero, configuration: configuration)
+        webView.pageZoom = 0.8
         webView.translatesAutoresizingMaskIntoConstraints = false
         webView.navigationDelegate = self
         webView.uiDelegate = self
@@ -435,7 +436,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, WKNavigationDelegate, 
            payload["type"] as? String == "responseHeight",
            let height = payload["height"] as? Double,
            height.isFinite, height > 0, height < 100_000 {
-            expandForResponse(contentHeight: CGFloat(height))
+            expandForResponse(contentHeight: CGFloat(height) * webView.pageZoom)
             return
         }
 

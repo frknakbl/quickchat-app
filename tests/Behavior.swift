@@ -120,6 +120,7 @@ let config = WKWebViewConfiguration()
 config.userContentController.add(probe, name: "quickChat")
 config.userContentController.addUserScript(WKUserScript(source: AppDelegate.observerForCheck, injectionTime: .atDocumentEnd, forMainFrameOnly: true))
 let fixture = WKWebView(frame: NSRect(x: 0, y: 0, width: 600, height: 420), configuration: config)
+fixture.pageZoom = 0.8
 fixture.navigationDelegate = probe
 fixture.loadHTMLString("""
 <html><head><style>body{margin:0}p{margin:8px}h4{font-size:12px}#reply{white-space:pre-wrap;line-height:20px}</style>
