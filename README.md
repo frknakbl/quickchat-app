@@ -27,6 +27,7 @@ Apple Silicon üzerinde macOS 27’de denenmiştir; Intel ve eski macOS sürüml
 ## Kullanım
 
 - `Option+Space`: pencereyi göster / gizle.
+- Sohbet içeriği daha kompakt bir görünüm için %80 ölçekte gösterilir.
 - Yanıt uzadıkça alt kenar sabit kalır, pencere animasyonla yukarı büyür. Üst sınır 820 nokta veya ekranın üst sınırıdır.
 - Yeni sohbet 420 noktalık kompakt yüksekliğe döner; genişlik korunur.
 - `⌘N`: yeni sohbet. `⌘O`: kuruluysa ana ChatGPT uygulamasını aç.
@@ -54,7 +55,7 @@ brew uninstall --cask frknakbl/tap/quickchat
 İki dosyanın bulunduğu klasörde SHA-256 kontrolü yapın:
 
 ```sh
-shasum -a 256 -c QuickChat-2.4.8-universal.zip.sha256
+shasum -a 256 -c QuickChat-2.4.10-universal.zip.sha256
 ```
 
 ZIP’i açıp QuickChat’i Uygulamalar klasörüne taşıyın.
